@@ -1,5 +1,5 @@
 # Timer
-A simple timer using chrono's high res clock
+A simple timer using chrono's high resolution system clock
 
 Info
 ----------
