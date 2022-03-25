@@ -4,27 +4,29 @@
 
 class Timer
 {
+    typedef std::chrono::high_resolution_clock stdyC;
+    typedef stdyC::time_point sPt;
 public:
     void start() {
-        this->Start = std::chrono::high_resolution_clock::now();
+        this->Start = stdyC::now();
         this->isRunning = true;
     }
 
     void stop() {
-        this->End = std::chrono::high_resolution_clock::now();
+        this->End = stdyC::now();
         this->isRunning = false;
     }
 
     void restart() {
-        this->Start = std::chrono::high_resolution_clock::now();
+        this->Start = stdyC::now();
     }
 
     double elapsedns() {
         
-        std::chrono::steady_clock::time_point end;
+        sPt end;
 
         if (this->isRunning) {
-            end = std::chrono::high_resolution_clock::now();
+            end = stdyC::now();
         }
         else {
             end = this->End;
@@ -36,10 +38,10 @@ public:
 
     double elapsedus() {
 
-        std::chrono::steady_clock::time_point end;
+        sPt end;
 
         if (this->isRunning) {
-            end = std::chrono::high_resolution_clock::now();
+            end = stdyC::now();
         }
         else {
             end = this->End;
@@ -50,10 +52,10 @@ public:
 
     double elapsedms() {
 
-        std::chrono::steady_clock::time_point end;
+        sPt end;
 
         if (this->isRunning) {
-            end = std::chrono::high_resolution_clock::now();
+            end = stdyC::now();
         }
         else {
             end = this->End;
@@ -64,10 +66,10 @@ public:
 
     double elapseds() {
 
-        std::chrono::steady_clock::time_point end;
+        sPt end;
 
         if (this->isRunning) {
-            end = std::chrono::high_resolution_clock::now();
+            end = stdyC::now();
         }
         else {
             end = this->End;
@@ -77,8 +79,8 @@ public:
     }
 
 private:
-    std::chrono::steady_clock::time_point Start;
-    std::chrono::steady_clock::time_point End;
+    sPt Start;
+    sPt End;
     bool isRunning = false;
 };
 
