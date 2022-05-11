@@ -47,7 +47,7 @@ public:
             end = this->End;
         }
 
-        return std::chrono::duration_cast<std::chrono::nanoseconds>(end - this->Start).count() / 1000.0;
+        return std::chrono::duration_cast<std::chrono::nanoseconds>(end - this->Start).count() * 0.001;
     }
 
     double elapsedms() {
@@ -61,7 +61,7 @@ public:
             end = this->End;
         }
 
-        return std::chrono::duration_cast<std::chrono::nanoseconds>(end - this->Start).count() / 1000000.0;
+        return std::chrono::duration_cast<std::chrono::nanoseconds>(end - this->Start).count() * 0.000001;
     }
 
     double elapseds() {
@@ -75,7 +75,7 @@ public:
             end = this->End;
         }
 
-        return std::chrono::duration_cast<std::chrono::nanoseconds>(end - this->Start).count() / 1000000000.0;
+        return std::chrono::duration_cast<std::chrono::nanoseconds>(end - this->Start).count() * 0.000000001;
     }
 
 private:
